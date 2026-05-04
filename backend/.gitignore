@@ -4,3 +4,9 @@ __pycache__/
 .env
 *.pdf
 .pytest_cache/
+
+.test_embedding.py
+.test_gemini.py
+.test_pdf.py
+.test_search.py
+.test_storage.py
