@@ -30,7 +30,7 @@ Instructions:
 - Answer only from the provided context. Do not use outside knowledge.
 - Use chain-of-thought reasoning to arrive at your answer.
 - If the answer is not in the context, say "I could not find this information in the document."
-- Respond ONLY with a valid JSON object, no markdown, no backticks, nothing else.
+- Respond ONLY with a valid JSON object,Do NOT use markdown. Do NOT wrap in code fences. No backticks. No preamble. Raw JSON only.
 
 Response format:
 {{
@@ -46,6 +46,13 @@ Response format:
     )
 
     raw_text = response.text.strip()
+
+    # strip markdown code fence
+    if raw_text.startswith("```"):
+        raw_text = raw_text.split("```")[1]
+    if raw_text.startswith("json"):
+        raw_text = raw_text[4:]
+    raw_text = raw_text.strip()
 
     try:
         parsed = json.loads(raw_text)

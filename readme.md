@@ -2,6 +2,17 @@
 
 A RAG-powered assistant that answers natural language questions from uploaded airline documents (passenger policies, flight regulations, airport procedures, operational manuals), returning accurate answers with page citations.
 
+## Screenshots
+
+### Upload Document
+![Upload Screen](docs/screenshots/upload_aeroguide.png)
+
+### Document List
+![Documents Screen](docs/screenshots/documents_aeroguide.png)
+
+### Ask a Question
+![Chat Screen](docs/screenshots/ai_reply.png)
+
 ## Tech Stack
 
 - **Backend** — FastAPI, Python 3.12
