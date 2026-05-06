@@ -17,7 +17,8 @@ function DocumentList({ documents, onSelect, selectedId }) {
         >
           <div style={styles.filename}>{doc.filename}</div>
           <p style={styles.meta}>
-            {doc.document_type} — {new Date(doc.uploaded_at).toLocaleString()}
+            {doc.document_type} —{" "}
+            {new Date(doc.uploaded_at + "Z").toLocaleString()}
           </p>
         </div>
       ))}
